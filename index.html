@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Производитель ЛКМ | АЛЬФА-ЮГ</title>
+    <!-- Подключаем шрифты и иконки -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Основные стили (будут в style.css) -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body id="top">
+    <!-- Шапка с логотипом и навигацией -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="АЛЬФА-ЮГ" height="35">
+                <span>АЛЬФА-ЮГ</span>
+            </a>
+            <nav>
+                <a href="#catalog">Каталог</a>
+                <a href="#advantages">Решения</a>
+                <a href="#objects">Объекты</a>
+                <a href="#production">Производство</a>
+                <a href="#docs">Документация</a>
+                <a href="#partners">Дилерам</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:+79281779348" class="phone">+7 (928) 177-93-48</a>
+                <div class="estimate-icon" onclick="openEstimateModal()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="estimate-count" id="estimate-count">0</span>
+                </div>
+                <button onclick="handlePriceRequest()" class="btn-small">Получить прайс</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero-блок -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <span class="badge">Российское производство</span>
+                <h1>Профессиональные краски для застройщиков и дилеров</h1>
+                <p>Экономия до 40% относительно европейских брендов. Прямые поставки с завода. Стабильное качество и доставка по всей России.</p>
+                <div class="hero-actions">
+                    <button onclick="openModal('price')" class="btn-primary">Получить прайс</button>
+                    <a href="#analogue" class="btn-secondary">Подобрать аналог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества (бывшая секция "Наши преимущества") -->
+    <section id="advantages" class="advantages-section">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Собственное производство</h3>
+                    <p>Контроль рецептур и стабильное качество каждой партии продукции.</p>
+                </div>
+                <div class="feature">
+                    <h3>Экономия до 40%</h3>
+                    <p>Аналоги популярных европейских красок по более выгодной цене.</p>
+                </div>
+                <div class="feature">
+                    <h3>Доставка по РФ</h3>
+                    <p>Отгрузка транспортными компаниями в любые регионы.</p>
+                </div>
+                <div class="feature">
+                    <h3>Поддержка дилеров</h3>
+                    <p>Маркетинговые материалы, образцы и обучение.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Каталог продукции (динамический, с фильтрацией) -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Каталог продукции</h2>
+                <div class="filter-bar">
+                    <button class="filter-btn active" onclick="filterProducts('Все')">Все</button>
+                    <button class="filter-btn" onclick="filterProducts('Интерьерные')">Интерьерные</button>
+                    <button class="filter-btn" onclick="filterProducts('Фасадные')">Фасадные</button>
+                    <button class="filter-btn" onclick="filterProducts('Грунты')">Грунты</button>
+                </div>
+            </div>
+            <!-- Контейнер для карточек товаров -->
+            <div class="product-grid" id="productGrid"></div>
+            <!-- Контейнер для пагинации -->
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
+
+    <!-- Калькулятор расхода (улучшенная версия) -->
+    <section id="calculator" class="calc-section">
+        <div class="container">
+            <h2>Калькулятор расхода краски</h2>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label>Площадь окрашивания (м²)</label>
+                        <input type="number" id="calc-area" placeholder="100" oninput="runCalc()">
+                    </div>
+                    <div class="input-group">
+                        <label>Выберите краску</label>
+                        <select id="calc-paint" onchange="runCalc()">
+                            <option value="">-- Любая краска (расход по умолчанию) --</option>
+                        </select>
+                        <label>Тип поверхности</label>
+                        <select id="calc-surface" onchange="runCalc()">
+                            <option value="1">Гладкая (шпаклевка)</option>
+                            <option value="1.3">Пористая (бетон/кирпич)</option>
+                            <option value="1.5">Фактурные обои</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Кол-во слоев</label>
+                        <select id="calc-layers" onchange="runCalc()">
+                            <option value="1">1 слой</option>
+                            <option value="2" selected>2 слоя</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="result-box">
+                        <span class="res-label">Необходимый объем:</span>
+                        <span id="res-total">0</span> <span class="res-unit">кг</span>
+                        <p class="res-note">*Расчет выполнен на основе среднего расхода 150г/м² на один слой.</p>
+                        <button class="btn-primary" onclick="handlePriceRequest()">Запросить стоимость этого объема</button>
+                        <button class="btn-secondary" onclick="addCalculationToEstimate()" style="margin-top: 10px;">Добавить расчёт в смету</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подбор аналога -->
+    <section id="analogue" class="analogue-section">
+        <div class="container">
+            <div class="analogue-box reveal">
+                <div class="analogue-text">
+                    <h2>Подбор аналога брендов</h2>
+                    <p>Используете импортные краски? Мы подберем аналог дешевле.</p>
+                    <form class="analogue-form" action="https://formspree.io/f/ВАШ_КОД" method="POST">
+                        <input type="text" name="brand" placeholder="Какая краска используется? (например Tikkurila)" required>
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="text" name="company" placeholder="Название компании">
+                        <input type="number" name="volume" placeholder="Объем закупки (кг)" min="1">
+                        <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                        <button type="submit" class="btn-primary">Получить расчет экономии</button>
+                    </form>
+                </div>
+                <div class="analogue-image">
+                    <img src="analogue2.png" alt="Сравнение">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши объекты -->
+    <section id="objects" class="objects-section">
+        <div class="container">
+            <h2>Наши объекты</h2>
+            <div class="objects-grid">
+                <div class="object-item reveal">
+                    <div class="obj-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="obj-info">
+                        <h4>ЖК «Звездный», Ростов</h4>
+                        <p>Покраска МОП и подземного паркинга. Объем: 12 тонн.</p>
+                    </div>
+                </div>
+                <div class="object-item reveal">
+                    <div class="obj-img" style="background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="obj-info">
+                        <h4>Бизнес-центр «Альфа», Батайск</h4>
+                        <p>Интерьерные решения премиум-класса.</p>
+                    </div>
+                </div>
+                <div class="object-item reveal">
+                    <div class="obj-img" style="background-image: url('https://images.unsplash.com/photo-1560184897-502a475f7a0d?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="obj-info">
+                        <h4>Жилой комплекс «Атмосфера»</h4>
+                        <p>Фасадные работы с использованием AS Facade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наше производство -->
+    <section id="production" class="production-section">
+        <div class="container">
+            <h2>Наше производство</h2>
+            <div class="production-grid">
+                <img src="p1.jpg" alt="Производство">
+                <img src="p2.jpg" alt="Производство">
+                <img src="p3.jpg" alt="Производство">
+            </div>
+            <p>Современное оборудование, лабораторный контроль качества и строгие стандарты производства.</p>
+        </div>
+    </section>
+
+    <!-- Документация -->
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <h2>Документация</h2>
+            <ul class="docs-list">
+                <li><a href="#" onclick="openDocumentGallery('certificates'); return false;">Сертификаты соответствия</a></li>
+                <li><a href="#" onclick="openDocumentGallery('fireProtocols'); return false;">Пожарные протоколы</a></li>
+                <li><a href="#" onclick="openDocumentGallery('ecoPassports'); return false;">Экологические паспорта</a></li>
+                <li><a href="#" onclick="openDocumentGallery('techCards'); return false;">Технические карты продуктов</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Дилерская программа -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2>Дилерская программа</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Маржа до 30%</h3>
+                    <p>Специальные цены для партнеров.</p>
+                </div>
+                <div class="feature">
+                    <h3>Маркетинговая поддержка</h3>
+                    <p>Каталоги, образцы, рекламные материалы.</p>
+                </div>
+                <div class="feature">
+                    <h3>Логистика</h3>
+                    <p>Поставки по всей России.</p>
+                </div>
+            </div>
+            <div class="partner-form-card">
+                <h3>Заявка на дилерство</h3>
+                <form class="cta-form" id="dealer-form" action="https://formspree.io/f/ВАШ_КОД" method="POST">
+                    <input type="text" name="company" placeholder="Название компании" required>
+                    <input type="text" name="contact" placeholder="Контактное лицо" required>
+                    <input type="tel" name="phone" placeholder="Телефон" required>
+                    <input type="number" name="volume" placeholder="Планируемый объем закупок (кг)" min="1">
+                    <button type="submit" class="btn-primary">Стать дилером</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Блок "Наши клиенты" -->
+    <section id="clients" class="clients-section">
+        <div class="container">
+            <h2>Нам доверяют</h2>
+            <div class="clients-grid">
+                <div class="client-item">
+                    <img src="full_56DcLLLx.jpeg" alt="Клиент 1">
+                </div>
+                <div class="client-item">
+                    <img src="logo(1).png" alt="Клиент 2">
+                </div>
+                <div class="client-item">
+                    <img src="building-logo-vector-art-illustration-isolated-white-background-35_1113054-2514.avif" alt="Клиент 3">
+                </div>
+                <div class="client-item">
+                    <img src="logo-black3.jpg" alt="Клиент 4">
+                </div>
+                <div class="client-item">
+                    <img src="pngtree-property-and-construction-logo-office-exterior-realty-vector-picture-image_11034430.png" alt="Клиент 5">
+                </div>
+                <div class="client-item">
+                    <img src="vector-logo-icons-building-construction-creative-design_1149634-203.avif" alt="Клиент 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contacts" class="main-footer">
+        <div class="container footer-grid">
+            <div class="f-col">
+                <h3>АЛЬФА-ЮГ</h3>
+                <p>Производство высококачественных ЛКМ с 2022 года.</p>
+            </div>
+            <div class="f-col">
+                <h4>Документация</h4>
+                <ul>
+                    <li><a href="#">Сертификаты соответствия</a></li>
+                    <li><a href="#">Пожарные протоколы</a></li>
+                    <li><a href="#">Экологические паспорта</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Контакты</h4>
+                <p>г. Ростов-на-Дону, пр-кт. Космонавтов, 2/2</p>
+                <p><a href="tel:+79281779348">+7 (928) 177-93-48</a></p>
+                <p>infoalfa2022@bk.ru</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно (общее) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Подключаем скрипт (будет в script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>
