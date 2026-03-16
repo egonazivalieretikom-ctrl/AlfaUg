@@ -1043,8 +1043,8 @@ nav a {
 
 .enlarged-image {
     width: 50vw;
-    max-width: 95vw;
-    max-height: 90vh;
+    max-width: 75vw;
+    max-height: 50vh;
     object-fit: contain;
     border-radius: 4px;
     cursor: pointer;
