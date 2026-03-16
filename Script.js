@@ -5,8 +5,47 @@ const products = [
         "name": "Краска AS 03 - водно-дисперсионная интерьерная для стен и потолков",
         "description": "Краска AS 03 - профессионал трижды: 1) для стен; 2) для потолков; 3) для обоев. Белая глубокоматовая интерьерная акриловая краска для окраски стен и потолков внутри помещений с нормальной влажностью.",
         "category": "interior",
-        "image": "images/AS03.png",
+        "image": "images/AS03.webp",
         "badge": null,
+        "fullDescription": `
+        <p><strong>AS 03</strong></p>
+        <p><strong>Назначение</strong><br>Белая глубокоматовая интерьерная акриловая краска для окраски стен и потолков внутри помещений с нормальной влажностью.</p>
+        <p><strong>Особенности</strong><br>
+        - обладает высокой степенью белизны и укрывистости;<br>
+        - окрашенная поверхность устойчива к сухой уборке, не подвержена мелению;<br>
+        - легко наносится, быстро сохнет, образуя экологичное покрытие;<br>
+        - рекомендована для использования в детских учреждениях и помещениях административной группы лечебно-профилактических учреждений.
+        </p>
+        <p><strong>Основа для нанесения</strong><br>
+        - минеральные поверхности: бетон, кирпич, оштукатуренные и зашпатлеванные поверхности;<br>
+        - листовые стройматериалы: ДСП, ДВП, OSB, МДФ, ГКЛ, ГВЛ, ГСП, ЦСП;<br>
+        - все виды обоев под покраску;<br>
+        - старые прочные лакокрасочные покрытия.
+        </p>
+        <p><strong>Подготовка поверхности</strong><br>Грунтование одной из грунтовок:
+        <br>- Грунтовка AS универсальная водно-дисперсионная полиакриловая для внутренних и наружных работ;
+        <br>- Грунт-индикатор AS водно-дисперсионная полиакриловая для внутренних и наружных работ;
+        <br>- Грунтовка AS ExlusivE глубокого проникновения водно-дисперсионная полиакриловая для внутренних и наружных работ.
+        </p>
+        <p><strong>Способ нанесения</strong><br>Валиком, кистью или краскопультом. Допускается разбавление до 5% от массы краски.</p>
+        <p><strong>Характеристики</strong></p>
+        <dl class="specs-grid">
+            <dt>Основа:</dt><dd>Акриловый латекс</dd>
+            <dt>Разбавитель:</dt><dd>Вода</dd>
+            <dt>Цвет:</dt><dd>Белый (База A)</dd>
+            <dt>Степень блеска:</dt><dd>Глубокоматовая</dd>
+            <dt>Стойкость к мытью:</dt><dd>Устойчива к сухой уборке</dd>
+            <dt>Расход:</dt><dd>1 кг на 8 кв.м</dd>
+            <dt>Плотность:</dt><dd>~1,5 кг/л</dd>
+            <dt>Укрывистость:</dt><dd>210 г/кв.м</dd>
+            <dt>Морозостойкость:</dt><dd>Морозостойкая</dd>
+            <dt>Время высыхания между слоями:</dt><dd>1 час</dd>
+            <dt>Время полного высыхания:</dt><dd>24 часа</dd>
+            <dt>Срок годности:</dt><dd>24 месяца</dd>
+            <dt>Фасовка:</dt><dd>1 кг, 3 кг, 7 кг, 14 кг</dd>
+            <dt>Колеровка:</dt><dd>Водно-дисперсионными красителями вручную или на колеровочных аппаратах. Очень важно колеровать весь объем краски сразу.</dd>
+        </dl>
+    `,
         "consumption": 0.1
     },
     {
@@ -14,7 +53,7 @@ const products = [
         "name": "Краска AS ExlusivE 03 - водно-дисперсионная интерьерная для стен и потолков",
         "description": "Краска AS ExlusivE 03 – профессионал трижды: 1) для стен; 2) для потолков; 3) для обоев.",
         "category": "interior",
-        "image": "images/AS03Exc.png",
+        "image": "images/AS03Exc.webp",
         "badge": null,
 
         "fullDescription": `
@@ -65,7 +104,7 @@ const products = [
         "name": "Краска AS 08 - водно-дисперсионная моющаяся суперстойкая",
         "description": "Число 8 – это число бесконечности. Краска AS 08 – моющаяся суперстойкая краска, которую можно мыть бесконечное количество раз",
         "category": "interior",
-        "image": "images/AS08.png",
+        "image": "images/AS08.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS 08</strong></p>
@@ -115,7 +154,7 @@ const products = [
         "name": "Краска AS ExlusivE 08 - водно-дисперсионная моющаяся суперстойкая",
         "description": "Число 8 – это число бесконечности. Краска AS ExlusivE 08 – моющаяся суперстойкая краска, которую можно мыть бесконечное количество раз",
         "category": "interior",
-        "image": "images/AS08Exc.png",
+        "image": "images/AS08Exc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS ExlusivE 08</strong></p>
@@ -165,7 +204,7 @@ const products = [
         "name": "Краска AS 12 - водно-дисперсионная фасадная",
         "description": "Краска AS 12 – это профессиональная защиты фасадов 12 месяцев в году.",
         "category": "facade",
-        "image": "images/AS12.png",
+        "image": "images/AS12.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS 12</strong></p>
@@ -214,7 +253,7 @@ const products = [
         "name": "Краска AS ExlusivE 12 - водно-дисперсионная фасадная",
         "description": "Краска AS ExlusivE 12– это профессиональная защиты фасадов 12 месяцев в году.",
         "category": "facade",
-        "image": "images/AS12Exc.png",
+        "image": "images/AS12Exc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS ExlusivE 12</strong></p>
@@ -263,7 +302,7 @@ const products = [
         "name": "Грунтовка AS ExlusivE 17 - глубокого проникновения водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/primerAS17Exc.png",
+        "image": "images/primerAS17Exc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS ExlusivE 17</strong></p>
@@ -297,7 +336,7 @@ const products = [
         "name": "Грунтовка AS - универсальная водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/Universalprimer.png",
+        "image": "images/Universalprimer.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>AS универсальная</strong></p>
@@ -329,7 +368,7 @@ const products = [
         "name": "Грунт-индикатор AS - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/GroundIndicator.png",
+        "image": "images/GroundIndicator.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунт-индикатор AS</strong></p>
@@ -361,7 +400,7 @@ const products = [
         "name": "Грунтовка AS ExlusivE - универсальная водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/UniversalprimerExc.png",
+        "image": "images/UniversalprimerExc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка AS ExlusivE универсальная водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -393,7 +432,7 @@ const products = [
         "name": "Грунтовка AS укрепляющая - проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/StrengtheningPrimer.png",
+        "image": "images/StrengtheningPrimer.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка AS укрепляющая проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -425,7 +464,7 @@ const products = [
         "name": "Грунт-индикатор AS ExlusivE - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/GroundIndicatorExc.png",
+        "image": "images/GroundIndicatorExc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунт-индикатор AS ExlusivE водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -457,7 +496,7 @@ const products = [
         "name": "Грунтовка AS ExlusivE укрепляющая - проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/StrengtheningPrimerExc.png",
+        "image": "images/StrengtheningPrimerExc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка AS ExlusivE укрепляющая проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -489,7 +528,7 @@ const products = [
         "name": "Грунтовка AS ExlusivE глубокого проникновения - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/primerpenetratingExc.png",
+        "image": "images/primerpenetratingExc.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка AS ExlusivE глубокого проникновения водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -522,7 +561,7 @@ const products = [
         "name": "Грунтовка BelissimoAS универсальная - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/BelUniversalprimer.png",
+        "image": "images/BelUniversalprimer.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка BelissimoAS универсальная водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -553,7 +592,7 @@ const products = [
         "name": "Грунт-индикатор BelissimoAS - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/BelGroundIndicator.png",
+        "image": "images/BelGroundIndicator.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунт-индикатор BelissimoAS водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -585,7 +624,7 @@ const products = [
         "name": "Грунтовка BelissimoAS укрепляющая - проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/BelStrengtheningPrimer.png",
+        "image": "images/BelStrengtheningPrimer.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка BelissimoAS укрепляющая проникающая водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -617,7 +656,7 @@ const products = [
         "name": "Грунтовка BelissimoAS глубокого проникновения - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/BelPrimerHening.png",
+        "image": "images/BelPrimerHening.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка BelissimoAS глубокого проникновения водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -650,7 +689,7 @@ const products = [
         "name": "Грунтовка BelissimoAS 17 глубокого проникновения - водно-дисперсионная полиакриловая для внутренних и наружных работ",
         "description": "",
         "category": "ground",
-        "image": "images/primerAS17Bel.png",
+        "image": "images/primerAS17Bel.webp",
         "badge": null,
         "fullDescription": `
             <p><strong>Грунтовка BelissimoAS 17 глубокого проникновения водно-дисперсионная полиакриловая для внутренних и наружных работ</strong></p>
@@ -1095,12 +1134,19 @@ function loadEstimate() {
     if (saved) {
         try {
             estimateItems = JSON.parse(saved);
-            // Если у элемента нет unit, добавляем 'kg' (для старых данных)
-            estimateItems.forEach(item => {
-                if (!item.unit) item.unit = 'kg';
-                // Можно также удалить поле price, если оно есть (необязательно)
-                // delete item.price;
-            });
+            // Если первый элемент не имеет поля isCalculation, значит это старые данные – очищаем
+            if (estimateItems.length > 0 && estimateItems[0].isCalculation === undefined) {
+                estimateItems = [];
+            } else {
+                // Для существующих расчётных позиций добавляем поле image, если его нет
+                estimateItems.forEach(item => {
+                    if (!item.unit) item.unit = 'kg';
+                    if (!item.image && item.paintId) {
+                        const product = products.find(p => p.id == item.paintId);
+                        if (product) item.image = product.image;
+                    }
+                });
+            }
         } catch (e) {
             estimateItems = [];
         }
@@ -1126,22 +1172,39 @@ function updateEstimateCount() {
 }
 
 // Добавление товара в смету
+
 function addToEstimate(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    const existing = estimateItems.find(item => item.id === productId);
-    if (existing) {
-        existing.quantity += 1;
-    } else {
-        estimateItems.push({
-            id: product.id,
-            name: product.name,
-            image: product.image,
-            quantity: 1,
-            unit: 'kg' // по умолчанию килограммы
-        });
-    }
+    // Параметры по умолчанию
+    const area = 1; // 1 м²
+    const surfaceFactor = 1; // гладкая
+    const layers = 1; // 1 слой
+    const paintId = product.id;
+    const paintName = product.name;
+    const baseConsumption = product.consumption || 0.15;
+    // Объём = площадь * расход * поверхность * слои
+    const quantity = (area * baseConsumption * surfaceFactor * layers).toFixed(1);
+
+    const calcId = 'calc_' + Date.now() + '_' + productId; // уникальный идентификатор
+
+    const calculationItem = {
+        id: calcId,
+        name: product.name, // название товара
+        quantity: parseFloat(quantity),
+        unit: 'kg',
+        isCalculation: true,
+        area: area,
+        surfaceFactor: surfaceFactor,
+        layers: layers,
+        paintId: paintId,
+        baseConsumption: baseConsumption,
+        paintName: paintName,
+        image: product.image // сохраняем изображение
+    };
+
+    estimateItems.push(calculationItem);
     saveEstimate();
 }
 
@@ -1166,11 +1229,15 @@ function addCalculationToEstimate() {
 
     let paintId = null;
     let paintName = '';
+    let productImage = '';
     const paintSelect = document.getElementById('calc-paint');
     if (paintSelect && paintSelect.value) {
         paintId = parseInt(paintSelect.value);
         const product = products.find(p => p.id === paintId);
-        if (product) paintName = product.name;
+        if (product) {
+            paintName = product.name;
+            productImage = product.image;
+        }
     }
 
     let baseConsumption = 0.15;
@@ -1179,13 +1246,14 @@ function addCalculationToEstimate() {
         if (product && product.consumption) baseConsumption = product.consumption;
     }
 
-    calculationCounter++;
-    const shortName = `Расчёт №${calculationCounter}`;
+    // Формируем название: если выбрана краска, используем её имя, иначе "Расчёт"
+    const name = paintName ? paintName : `Расчёт от ${new Date().toLocaleTimeString()}`;
+
     const calcId = 'calc_' + Date.now();
 
     const calculationItem = {
         id: calcId,
-        name: shortName,               // ← упрощённое название
+        name: name,
         quantity: volume,
         unit: 'kg',
         isCalculation: true,
@@ -1194,7 +1262,8 @@ function addCalculationToEstimate() {
         layers: layers,
         paintId: paintId,
         baseConsumption: baseConsumption,
-        paintName: paintName
+        paintName: paintName,
+        image: productImage
     };
 
     estimateItems.push(calculationItem);
@@ -1244,6 +1313,7 @@ function removeEstimateItem(itemId) {
 }
 
 // Отрисовка модального окна со сметой
+
 function renderEstimateModal() {
     const modal = document.getElementById('modal');
     const body = document.getElementById('modal-body');
@@ -1269,102 +1339,75 @@ function renderEstimateModal() {
     let allPricesKnown = true;
 
     estimateItems.forEach(item => {
-        if (item.isCalculation) {
-            // Расчётная позиция – считаем только объём, цена не определена
-            totalVolumeKg += item.quantity;
-            allPricesKnown = false; // у расчётов цены нет
-            // остальное как есть
-            const paintOptions = products.map(p => {
-                const selected = (item.paintId == p.id) ? 'selected' : '';
-                return `<option value="${p.id}" ${selected}>${p.name}</option>`;
-            }).join('');
+        // Все позиции считаем расчётными
+        const imageHtml = item.image
+            ? `<img src="${item.image}" alt="${item.name}" class="estimate-item-image">`
+            : `<div class="estimate-item-image" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                   <i class="fas fa-calculator" style="font-size: 2rem; color: var(--primary);"></i>
+               </div>`;
 
-            itemsHtml += `
-                <div class="estimate-item-card" data-id="${item.id}">
-                    <div class="estimate-item-image" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-calculator" style="font-size: 2rem; color: var(--primary);"></i>
-                    </div>
-                    <div class="estimate-item-details">
-                        <h4>${item.name}</h4>
-                        <div class="calculation-params">
-                            <div class="param-group">
-                                <label>Площадь (м²)</label>
-                                <input type="number" value="${item.area}" min="0" step="1" class="calc-param-input" data-id="${item.id}" data-param="area">
-                            </div>
-                            <div class="param-group">
-                                <label>Тип поверхности</label>
-                                <select class="calc-param-select" data-id="${item.id}" data-param="surfaceFactor">
-                                    <option value="1" ${item.surfaceFactor == 1 ? 'selected' : ''}>Гладкая</option>
-                                    <option value="1.3" ${item.surfaceFactor == 1.3 ? 'selected' : ''}>Пористая</option>
-                                    <option value="1.5" ${item.surfaceFactor == 1.5 ? 'selected' : ''}>Фактурные обои</option>
-                                </select>
-                            </div>
-                            <div class="param-group">
-                                <label>Кол-во слоёв</label>
-                                <input type="number" value="${item.layers}" min="1" step="1" class="calc-param-input" data-id="${item.id}" data-param="layers">
-                            </div>
-                            <div class="param-group">
-                                <label>Краска</label>
-                                <select class="calc-param-select" data-id="${item.id}" data-param="paintId">
-                                    <option value="">-- Любая (0.15 кг/м²) --</option>
-                                    ${paintOptions}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="estimate-item-controls">
-                            <div class="quantity-control">
-                                <button onclick="decreaseEstimateItem('${item.id}')">−</button>
-                                <input type="number" value="${item.quantity}" min="0.1" step="0.1" class="item-quantity-input" data-id="${item.id}">
-                                <button onclick="increaseEstimateItem('${item.id}')">+</button>
-                            </div>
-                            <select class="item-unit-select" data-id="${item.id}" onchange="updateEstimateItemUnit('${item.id}', this.value)">
-                                <option value="kg" ${item.unit === 'kg' ? 'selected' : ''}>кг</option>
-                                <option value="t" ${item.unit === 't' ? 'selected' : ''}>т</option>
-                            </select>
-                            <button class="estimate-item-remove" onclick="removeEstimateItem('${item.id}')">×</button>
-                        </div>
-                        <div class="estimate-item-price">уточнить стоимость</div>
-                    </div>
-                </div>
-            `;
+        const paintOptions = products.map(p => {
+            const selected = (item.paintId == p.id) ? 'selected' : '';
+            return `<option value="${p.id}" ${selected}>${p.name}</option>`;
+        }).join('');
+
+        totalVolumeKg += item.quantity;
+
+        // Если у товара есть цена (можно добавить позже), учитываем
+        if (item.price) {
+            totalPrice += item.quantity * item.price;
         } else {
-            // Обычный товар
-            const product = products.find(p => p.id === item.id);
-            const imgSrc = product ? product.image : '';
-            totalVolumeKg += item.quantity;
-
-            // Если у товара есть цена, добавляем к общей стоимости
-            if (product && product.price) {
-                totalPrice += item.quantity * product.price;
-            } else {
-                allPricesKnown = false;
-            }
-
-            itemsHtml += `
-                <div class="estimate-item-card" data-id="${item.id}">
-                    <img src="${imgSrc}" alt="${item.name}" class="estimate-item-image">
-                    <div class="estimate-item-details">
-                        <h4>${item.name}</h4>
-                        <div class="estimate-item-controls">
-                            <div class="quantity-control">
-                                <button onclick="decreaseEstimateItem(${item.id})">−</button>
-                                <input type="number" value="${item.quantity}" min="1" step="1" class="item-quantity-input" data-id="${item.id}">
-                                <button onclick="increaseEstimateItem(${item.id})">+</button>
-                            </div>
-                            <select class="item-unit-select" data-id="${item.id}" onchange="updateEstimateItemUnit(${item.id}, this.value)">
-                                <option value="kg" ${item.unit === 'kg' ? 'selected' : ''}>кг</option>
-                                <option value="t" ${item.unit === 't' ? 'selected' : ''}>т</option>
-                            </select>
-                            <button class="estimate-item-remove" onclick="removeEstimateItem(${item.id})">×</button>
-                        </div>
-                        <div class="estimate-item-price">${product && product.price ? product.price + ' ₽/кг' : 'уточнить стоимость'}</div>
-                    </div>
-                </div>
-            `;
+            allPricesKnown = false;
         }
+
+        itemsHtml += `
+            <div class="estimate-item-card" data-id="${item.id}">
+                ${imageHtml}
+                <div class="estimate-item-details">
+                    <h4>${item.name}</h4>
+                    <div class="calculation-params">
+                        <div class="param-group">
+                            <label>Площадь (м²)</label>
+                            <input type="number" value="${item.area}" min="0" step="1" class="calc-param-input" data-id="${item.id}" data-param="area">
+                        </div>
+                        <div class="param-group">
+                            <label>Тип поверхности</label>
+                            <select class="calc-param-select" data-id="${item.id}" data-param="surfaceFactor">
+                                <option value="1" ${item.surfaceFactor == 1 ? 'selected' : ''}>Гладкая</option>
+                                <option value="1.3" ${item.surfaceFactor == 1.3 ? 'selected' : ''}>Пористая</option>
+                                <option value="1.5" ${item.surfaceFactor == 1.5 ? 'selected' : ''}>Фактурные обои</option>
+                            </select>
+                        </div>
+                        <div class="param-group">
+                            <label>Кол-во слоёв</label>
+                            <input type="number" value="${item.layers}" min="1" step="1" class="calc-param-input" data-id="${item.id}" data-param="layers">
+                        </div>
+                        <div class="param-group">
+                            <label>Краска</label>
+                            <select class="calc-param-select" data-id="${item.id}" data-param="paintId">
+                                <option value="">-- Любая (0.15 кг/м²) --</option>
+                                ${paintOptions}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="estimate-item-controls">
+                        <div class="quantity-control">
+                            <button onclick="decreaseEstimateItem('${item.id}')">−</button>
+                            <input type="number" value="${item.quantity}" min="0.1" step="0.1" class="item-quantity-input" data-id="${item.id}">
+                            <button onclick="increaseEstimateItem('${item.id}')">+</button>
+                        </div>
+                        <select class="item-unit-select" data-id="${item.id}" onchange="updateEstimateItemUnit('${item.id}', this.value)">
+                            <option value="kg" ${item.unit === 'kg' ? 'selected' : ''}>кг</option>
+                            <option value="t" ${item.unit === 't' ? 'selected' : ''}>т</option>
+                        </select>
+                        <button class="estimate-item-remove" onclick="removeEstimateItem('${item.id}')">×</button>
+                    </div>
+                    <div class="estimate-item-price">уточнить стоимость</div>
+                </div>
+            </div>
+        `;
     });
 
-    // Перевод в тонны
     const totalVolumeT = totalVolumeKg / 1000;
     const priceDisplay = allPricesKnown ? totalPrice.toLocaleString() + ' ₽' : 'по запросу';
 
@@ -1391,7 +1434,7 @@ function renderEstimateModal() {
         </div>
     `;
 
-    // Обработчики для ручного ввода количества
+    // Обработчики
     body.querySelectorAll('.item-quantity-input').forEach(input => {
         input.addEventListener('change', function (e) {
             const newQuantity = parseFloat(e.target.value);
@@ -1404,7 +1447,6 @@ function renderEstimateModal() {
         });
     });
 
-    // Обработчики для параметров расчёта
     body.querySelectorAll('.calc-param-input').forEach(input => {
         input.addEventListener('change', function (e) {
             const itemId = this.dataset.id;
@@ -1524,16 +1566,18 @@ function updateCalculationParam(itemId, param, value) {
 
     item[param] = value;
 
-    // Если изменилась краска, нужно обновить baseConsumption и имя
+    // Если изменилась краска, обновляем baseConsumption и paintName, но имя не меняем
     if (param === 'paintId') {
         const product = products.find(p => p.id == value);
         if (product) {
             item.baseConsumption = product.consumption || 0.15;
             item.paintName = product.name;
-            
+            // Обновляем изображение, если есть
+            item.image = product.image;
         } else {
             item.baseConsumption = 0.15;
             item.paintName = '';
+            item.image = null;
         }
     }
 
