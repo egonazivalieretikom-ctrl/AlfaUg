@@ -857,8 +857,27 @@ function closeModal() {
 
 // ==================== ПЕРЕМЕННЫЕ ДЛЯ ПАГИНАЦИИ ====================
 let currentPage = 1;
-const itemsPerPage = 6; // количество товаров на одной странице
+let itemsPerPage = 6; // будет изменяться динамически количество товаров на одной странице
 let filteredProducts = products; // текущий отфильтрованный массив
+
+function getItemsPerPage() {
+    if (window.innerWidth < 400) {
+        return 3; // очень маленькие телефоны
+    } else if (window.innerWidth < 900) {
+        return 4; // мобильные телефоны
+    } else {
+        return 6; // десктопы (можно оставить 6, но 9 даст три ряда по три)
+    }
+}
+
+window.addEventListener('resize', () => {
+    const newItemsPerPage = getItemsPerPage();
+    if (newItemsPerPage !== itemsPerPage) {
+        itemsPerPage = newItemsPerPage;
+        currentPage = 1; // сбрасываем на первую страницу
+        updateCatalog(); // перерисовываем каталог
+    }
+});
 
 // ==================== ОТРИСОВКА КАТАЛОГА ====================
 function renderCatalog(productsArray) {
@@ -991,6 +1010,12 @@ function filterProducts(rusCategory) {
 
 // ==================== КАЛЬКУЛЯТОР ====================
 function runCalc() {
+    // Снимаем подсветку ошибки, если поле валидно
+    const areaInput = document.getElementById('calc-area');
+    if (areaInput && areaInput.value && parseFloat(areaInput.value) > 0) {
+        areaInput.closest('.input-group').classList.remove('error');
+    }
+
     const area = document.getElementById('calc-area').value || 0;
     const surface = document.getElementById('calc-surface').value;
     const layers = document.getElementById('calc-layers').value;
@@ -1055,6 +1080,7 @@ const observer = new IntersectionObserver(entries => {
 
 // ==================== ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ ====================
 document.addEventListener('DOMContentLoaded', () => {
+    itemsPerPage = getItemsPerPage();
     filterProducts('Все');
     runCalc();
     populatePaintSelect(); 
@@ -1178,7 +1204,7 @@ function addToEstimate(productId) {
     if (!product) return;
 
     // Параметры по умолчанию
-    const area = 1; // 1 м²
+    const area = 10; // 1 м²
     const surfaceFactor = 1; // гладкая
     const layers = 1; // 1 слой
     const paintId = product.id;
@@ -1211,15 +1237,23 @@ function addToEstimate(productId) {
 
 
 function addCalculationToEstimate() {
-    const totalElement = document.getElementById('res-total');
-    if (!totalElement) return;
-    const volume = parseFloat(totalElement.innerText);
-    if (isNaN(volume) || volume <= 0) {
-        alert('Сначала выполните расчёт (введите площадь)');
-        return;
+    const areaInput = document.getElementById('calc-area');
+    const area = parseFloat(areaInput.value);
+
+    // Валидация площади
+    if (isNaN(area) || area <= 0) {
+        areaInput.closest('.input-group').classList.add('error');
+        return; // прерываем выполнение
+    } else {
+        areaInput.closest('.input-group').classList.remove('error');
     }
 
-    const area = parseFloat(document.getElementById('calc-area').value) || 0;
+    const totalElement = document.getElementById('res-total');
+    const volume = parseFloat(totalElement.innerText);
+    if (isNaN(volume) || volume <= 0) {
+        return; // на всякий случай, хотя такого не должно быть
+    }
+
     const surfaceSelect = document.getElementById('calc-surface');
     const surfaceFactor = parseFloat(surfaceSelect.value);
     const surfaceText = surfaceSelect.options[surfaceSelect.selectedIndex].text;
@@ -1246,9 +1280,7 @@ function addCalculationToEstimate() {
         if (product && product.consumption) baseConsumption = product.consumption;
     }
 
-    // Формируем название: если выбрана краска, используем её имя, иначе "Расчёт"
     const name = paintName ? paintName : `Расчёт от ${new Date().toLocaleTimeString()}`;
-
     const calcId = 'calc_' + Date.now();
 
     const calculationItem = {
@@ -1268,6 +1300,8 @@ function addCalculationToEstimate() {
 
     estimateItems.push(calculationItem);
     saveEstimate();
+
+    // Небольшое уведомление (можно заменить на более красивое)
     alert('Расчёт добавлен в смету');
 
     const modal = document.getElementById('modal');
@@ -1362,10 +1396,12 @@ function renderEstimateModal() {
 
         itemsHtml += `
             <div class="estimate-item-card" data-id="${item.id}">
+                <button class="estimate-item-remove" onclick="removeEstimateItem('${item.id}')">×</button>
                 ${imageHtml}
                 <div class="estimate-item-details">
                     <h4>${item.name}</h4>
                     <div class="calculation-params">
+                        <!-- параметры расчёта (без изменений) -->
                         <div class="param-group">
                             <label>Площадь (м²)</label>
                             <input type="number" value="${item.area}" min="0" step="1" class="calc-param-input" data-id="${item.id}" data-param="area">
@@ -1400,7 +1436,6 @@ function renderEstimateModal() {
                             <option value="kg" ${item.unit === 'kg' ? 'selected' : ''}>кг</option>
                             <option value="t" ${item.unit === 't' ? 'selected' : ''}>т</option>
                         </select>
-                        <button class="estimate-item-remove" onclick="removeEstimateItem('${item.id}')">×</button>
                     </div>
                     <div class="estimate-item-price">уточнить стоимость</div>
                 </div>
@@ -1485,15 +1520,17 @@ function openEstimateRequestModal() {
     const estimateData = encodeURIComponent(JSON.stringify(estimateItems));
 
     body.innerHTML = `
-        <h3>Оформить заявку</h3>
-        <form class="cta-form" action="https://formspree.io/f/ВАШ_КОД" method="POST">
-            <input type="hidden" name="_subject" value="Заявка со сметой">
-            <input type="hidden" name="estimate" value='${estimateData}'>
-            <input type="text" name="name" placeholder="Ваше имя" required>
-            <input type="tel" name="phone" placeholder="Телефон" required>
-            <input type="text" name="company" placeholder="Название компании">
-            <button type="submit" class="btn-primary">Отправить заявку</button>
-        </form>
+        <div class="partner-form-card" style="margin: 0 auto; box-shadow: none; width: 100%;">
+            <h3 style="margin-top: 0;">Оформить заявку</h3>
+            <form class="cta-form" action="https://formspree.io/f/ВАШ_КОД" method="POST">
+                <input type="hidden" name="_subject" value="Заявка со сметой">
+                <input type="hidden" name="estimate" value='${estimateData}'>
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <input type="text" name="company" placeholder="Название компании">
+                <button type="submit" class="btn-primary">Отправить заявку</button>
+            </form>
+        </div>
     `;
 }
 
@@ -1540,7 +1577,7 @@ function updateEstimateItemUnit(itemId, newUnit) {
     }
 }
 
-function recalcCalculationItem(itemId) {
+function recalculationItem(itemId) {
     const item = estimateItems.find(i => i.id == itemId);
     if (!item || !item.isCalculation) return;
 
